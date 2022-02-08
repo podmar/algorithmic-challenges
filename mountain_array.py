@@ -33,31 +33,21 @@
 #ACTION PLAN
 #find the max value, it's index and check if values right&left decrease
 
-test = [1, 2, 7, 1, 2, 1]
+test = [1, 2, 7, 5, 2, 1]
 
 def solution(arr): 
-
-#values for testing
-    ascends = 0
-    descends = 0
     
     is_mountain = True
 
     peak = arr.index(max(arr))
 
     for i in range(0, peak):
-        if arr[i] < arr[i+1]:
-            ascends += 1
-            print("The array item %i, ascends valuse is %i" %(arr[i], ascends))
-        else:
+        if arr[i] >= arr[i+1]:
             is_mountain = False
             break
 
     for n in range(peak, len(arr)-1): 
-        if arr[n] > arr[n+1]:
-            descends += 1
-            print("The array item %i, descends value is %i" %(arr[n], descends))
-        else:
+        if arr[n] <= arr[n+1]:
             is_mountain = False
             break
 
@@ -65,4 +55,4 @@ def solution(arr):
 
     return is_mountain
 
-print(solution(test))
+solution(test)
