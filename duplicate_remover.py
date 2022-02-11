@@ -26,9 +26,10 @@
 
 #############
 
-s = "etweeewwwwtzuue"
+test1 = "etweeewwwwtzuue"
+test2 = "etweeewwwwtzuue"
 
-def solution (s): 
+def solution_1(s): 
     starting_len = len(s)
     new_len = 0
 
@@ -44,6 +45,28 @@ def solution (s):
                 print(starting_len, new_len, s)
                 break
             
-        return s
+    return s
 
-print(solution(s))
+
+
+def solution_2(s): 
+
+     arr = []
+     index = 0
+
+     for i in s: 
+         if len(arr) == 0 or i != arr[index]: 
+             arr.append(i)
+         elif i == arr[index]: 
+             arr.pop(index)
+
+         index = len(arr)-1
+
+     final_s = ""
+
+     for l in arr:
+         final_s += l
+    
+     return final_s
+
+print(solution_1(test1), solution_2(test1))
