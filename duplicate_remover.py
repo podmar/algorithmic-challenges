@@ -26,24 +26,52 @@
 
 #############
 
-s = "etweeewwwwtzuue"
+test1 = "etweeewwwwtzuue"
+test2 = "etblfaabhbbwlqksjbrgdjknbmvxycvghfdjhfhdfue"
 
-def solution (s): 
+def solution_1(s): 
     starting_len = len(s)
     new_len = 0
 
     while starting_len != new_len: 
         starting_len = len(s)
 
-        for i in range(0, len(s)): 
-            print(s[i], s[i+1], starting_len)
+        try: 
+            for i in range(0, len(s)): 
 
-            if s[i] == s[i + 1]: 
-                s = s[:i] + s[i+2:]
-                new_len = len(s)
-                print(starting_len, new_len, s)
-                break
-            
-        return s
+                if s[i] == s[i + 1]: 
+                    s = s[:i] + s[i+2:]
+                    new_len = len(s)
+                    break
 
-print(solution(s))
+        except IndexError: 
+            pass
+
+    return s
+
+# managed to except the erron on solution_1, but the funtion is very slopw: time limit exceded
+
+def solution_2(s): 
+
+     arr = []
+     index = 0
+
+     for i in s: 
+         if len(arr) == 0 or i != arr[index]: 
+             arr.append(i)
+         elif i == arr[index]: 
+             arr.pop(index)
+
+         index = len(arr)-1
+
+     final_s = ""
+
+     for l in arr:
+         final_s += l
+    
+     return final_s
+
+print(solution_1(test1), solution_1(test2))
+print(solution_2(test1), solution_2(test2))
+# Runtime: 1418 ms, faster than 6.94% of Python online submissions for Remove All Adjacent Duplicates In String.
+# Memory Usage: 14.6 MB, less than 63.73% of Python online submissions for Remove All Adjacent Duplicates In String.
