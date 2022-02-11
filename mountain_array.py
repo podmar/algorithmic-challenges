@@ -41,9 +41,6 @@ def solution(arr):
 
     peak = arr.index(max(arr))
 
-    if peak == 0 or peak == len(arr) -1: 
-        is_mountain = False
-
     for i in range(0, peak):
         if arr[i] >= arr[i+1]:
             is_mountain = False
