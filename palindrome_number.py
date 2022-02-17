@@ -34,8 +34,9 @@
 test_1 = 121
 test_2 = -121
 test_3 = 123
+test_4 = -2
 
-def solution(x): 
+def string_solution(x): 
     is_palindrome = False
 
     s = str(x)
@@ -47,12 +48,42 @@ def solution(x):
     return is_palindrome
 
 
-print(solution(test_1), solution(test_2), solution(test_3))
+#print(string_solution(test_1), string_solution(test_2), string_solution(test_3), string_solution(test_4))
 
 #Runtime: 76 ms, faster than 55.30% of Python online submissions for Palindrome Number.
 #Memory Usage: 13.5 MB, less than 40.03% of Python online submissions for Palindrome Number.
 
 # How to solve without turning into string? 
 
+import math
 
+def integer_solution(x): 
+    is_palindrome = False
+    no_digits = 0
 
+    if x > 0: 
+        no_digits = int(math.log10(x)+1)
+    elif x == 0:
+        no_digits = 1
+    else: 
+        no_digits = int(math.log10(-x)+2)
+
+    remaining_number = x
+    digit_list = []
+
+    for i in range(no_digits-1,-1,-1): 
+        digit = remaining_number//(10**(i))
+        digit_list.append(digit)
+        remaining_number = remaining_number - digit*(10**(i))
+
+    backwards_digit_list = digit_list[::-1]
+
+    if digit_list == backwards_digit_list: 
+        is_palindrome = True
+
+    return is_palindrome
+
+print(integer_solution(test_1), integer_solution(test_2), integer_solution(test_3), integer_solution(test_4))
+
+# Runtime: 82 ms, faster than 49.00% of Python online submissions for Palindrome Number.
+# Memory Usage: 13.4 MB, less than 66.69% of Python online submissions for Palindrome Number.
