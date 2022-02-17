@@ -39,7 +39,7 @@ def solution(x):
     is_palindrome = False
 
     s = str(x)
-    s_backwards = s[-1::-1]
+    s_backwards = s[::-1]
 
     if s == s_backwards: 
         is_palindrome = True
