@@ -3,7 +3,7 @@ import unittest
 # target = __import__("binary_gap.py")
 # solution = target.solution
 
-from binary_gap import solution
+from challenges.binary_gap import solution
 
 class TestGap(unittest.TestCase): 
     def test_gap_length(self): 
