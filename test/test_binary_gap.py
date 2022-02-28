@@ -1,8 +1,5 @@
 import unittest
 
-# target = __import__("binary_gap.py")
-# solution = target.solution
-
 from challenges.binary_gap import solution
 
 class TestGap(unittest.TestCase): 
