@@ -53,11 +53,12 @@ def string_solution(x):
 #Runtime: 76 ms, faster than 55.30% of Python online submissions for Palindrome Number.
 #Memory Usage: 13.5 MB, less than 40.03% of Python online submissions for Palindrome Number.
 
-# How to solve without turning into string? 
+# [x] How to solve without turning into string? 
+# USING MATH MODULE and Log10
 
 import math
 
-def integer_solution(x): 
+def log10_solution(x): 
     is_palindrome = False
     no_digits = 0
 
@@ -83,7 +84,29 @@ def integer_solution(x):
 
     return is_palindrome
 
-print(integer_solution(test_1), integer_solution(test_2), integer_solution(test_3), integer_solution(test_4))
+print(log10_solution(test_1), log10_solution(test_2), log10_solution(test_3), log10_solution(test_4))
 
 # Runtime: 82 ms, faster than 49.00% of Python online submissions for Palindrome Number.
 # Memory Usage: 13.4 MB, less than 66.69% of Python online submissions for Palindrome Number.
+
+#USING MODULO OPERATOR
+
+def modulo_solution(x): 
+    is_palindrome = False
+
+    def reversed(num): 
+        reversed = 0
+        while num > 0:
+            reversed = (reversed * 10) + (num % 10)
+            num = num // 10
+        return reversed
+
+    if reversed(x) == x: 
+        is_palindrome = True
+
+    return is_palindrome
+
+print(modulo_solution(test_1), modulo_solution(test_2), modulo_solution(test_3), modulo_solution(test_4))
+
+# Runtime: 99 ms, faster than 34.25% of Python online submissions for Palindrome Number.
+# Memory Usage: 13.3 MB, less than 87.96% of Python online submissions for Palindrome Number.
