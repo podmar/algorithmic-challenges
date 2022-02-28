@@ -31,11 +31,6 @@
 
 ###
 
-test_1 = 121
-test_2 = -121
-test_3 = 123
-test_4 = -2
-
 def string_solution(x): 
     is_palindrome = False
 
@@ -47,8 +42,6 @@ def string_solution(x):
 
     return is_palindrome
 
-
-#print(string_solution(test_1), string_solution(test_2), string_solution(test_3), string_solution(test_4))
 
 #Runtime: 76 ms, faster than 55.30% of Python online submissions for Palindrome Number.
 #Memory Usage: 13.5 MB, less than 40.03% of Python online submissions for Palindrome Number.
@@ -84,8 +77,6 @@ def log10_solution(x):
 
     return is_palindrome
 
-print(log10_solution(test_1), log10_solution(test_2), log10_solution(test_3), log10_solution(test_4))
-
 # Runtime: 82 ms, faster than 49.00% of Python online submissions for Palindrome Number.
 # Memory Usage: 13.4 MB, less than 66.69% of Python online submissions for Palindrome Number.
 
@@ -105,8 +96,6 @@ def modulo_solution(x):
         is_palindrome = True
 
     return is_palindrome
-
-print(modulo_solution(test_1), modulo_solution(test_2), modulo_solution(test_3), modulo_solution(test_4))
 
 # Runtime: 99 ms, faster than 34.25% of Python online submissions for Palindrome Number.
 # Memory Usage: 13.3 MB, less than 87.96% of Python online submissions for Palindrome Number.
