@@ -26,9 +26,6 @@
 
 #############
 
-test1 = "etweeewwwwtzuue"
-test2 = "etblfaabhbbwlqksjbrgdjknbmvxycvghfdjhfhdfue"
-
 def solution_1(s): 
     starting_len = len(s)
     new_len = 0
@@ -71,7 +68,5 @@ def solution_2(s):
     
      return final_s
 
-print(solution_1(test1), solution_1(test2))
-print(solution_2(test1), solution_2(test2))
 # Runtime: 1418 ms, faster than 6.94% of Python online submissions for Remove All Adjacent Duplicates In String.
 # Memory Usage: 14.6 MB, less than 63.73% of Python online submissions for Remove All Adjacent Duplicates In String.
