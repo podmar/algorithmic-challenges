@@ -42,7 +42,7 @@ def solution_1(s):
                     break
 
         except IndexError: 
-            pass
+            break
 
     return s
 
