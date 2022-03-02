@@ -33,8 +33,6 @@
 #ACTION PLAN
 #find the max value, it's index and check if values right&left decrease
 
-test = [1, 2, 7, 5, 2, 1]
-
 def solution(arr): 
     
     is_mountain = True
@@ -57,5 +55,3 @@ def solution(arr):
     print("The given array is a mountain array: %r" %(is_mountain))
 
     return is_mountain
-
-solution(test)
