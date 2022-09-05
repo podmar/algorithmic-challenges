@@ -10,14 +10,14 @@ def solution(array):
     c = 0
 
     while c <= b:
-        if array[c] == 1:
-            c += 1
-        elif array[c] < 1:
+        if array[c] < 1:
             array[a], array[c] = array[c], array[a]
             a += 1
             c += 1
         elif array[c] > 1:
             array[c], array[b] = array[b], array[c]
             b -= 1
+        else:
+            c += 1
 
     return array
