@@ -1,4 +1,4 @@
-# sort a T[] one-dimensional array of integers in O(N) running time - and without any extra memory.
+# sort a T[] one-dimensional array of integers in O(N) / linear running time - and without any extra memory.
 # The array can contain values: 0, 1 and 2
 
 # 1 is the pivot value
