@@ -1,27 +1,23 @@
 # sort a T[] one-dimensional array of integers in O(N) running time - and without any extra memory.
 # The array can contain values: 0, 1 and 2
 
+# 1 is the pivot value
+# a marks start of ones, b marks start of twos, c marks the current index
+
 def solution(array):
-    zeroes = 0
-    ones = 0
-    twos = 0
-    sorted_list = []
+    a = 0
+    b = len(array) - 1
+    c = 0
 
-    for i in array:  # O(n)
-        if i == 0:  # O(1)
-            zeroes += 1
-        elif i == 1:
-            ones += 1
-        elif i == 2:
-            twos += 1
+    while c <= b:
+        if array[c] == 1:
+            c += 1
+        elif array[c] < 1:
+            array[a], array[c] = array[c], array[a]
+            a += 1
+            c += 1
+        elif array[c] > 1:
+            array[c], array[b] = array[b], array[c]
+            b -= 1
 
-    for n in range(zeroes):
-        sorted_list.append(0)
-    for n in range(ones):
-        sorted_list.append(1)
-    for n in range(twos):
-        sorted_list.append(2)
-
-    print(sorted_list)
-
-    return sorted_list
+    return array
