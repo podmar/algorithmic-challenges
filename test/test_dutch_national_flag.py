@@ -3,7 +3,7 @@ import unittest
 from challenges.dutch_national_flag import solution
 
 
-class TestGap(unittest.TestCase):
+class TestSolution(unittest.TestCase):
     def test_output_type(self):
         """Testing the type of the output array
         """
