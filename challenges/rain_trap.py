@@ -6,11 +6,11 @@ def solution(array):
 
     rain_volume = 0
 
-    for index in range(len(array)):
+    for index in range(len(array) - 1):
         # max_left = array[index]
-        for left_index in range(index):
+        for left_index in range(index - 1):
             max_left = max(array[left_index], array[index])
-        for right_index in range(index):
+        for right_index in range(index - 1):
             max_right = max(array[index], array[right_index])
 
         rain_volume = + max(max_left, max_right) - array[index]
