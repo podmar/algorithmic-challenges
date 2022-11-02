@@ -25,7 +25,9 @@ class TestReverseInteger(unittest.TestCase):
         """
 
         self.assertEqual(solution(21474836477), 0)
+        self.assertEqual(solution(979769686877), 0)
         self.assertEqual(solution(-2147483670), 0)
+        self.assertEqual(solution(-12345678765432), 0)
 
     def test_solution_32bit_inside_outside(self):
         """Testing if the solution returns correct value when the input inside but output outside 32 bit range
@@ -33,6 +35,9 @@ class TestReverseInteger(unittest.TestCase):
 
         self.assertEqual(solution(-2147483648), 0)
         self.assertEqual(solution(2147483647), 0)
+        self.assertEqual(solution(1563847412), 0)
+
+# edge numbers: -2147483648, 2147483647
 
 
 if __name__ == "__main__":
