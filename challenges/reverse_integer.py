@@ -38,7 +38,7 @@ def solution(n):
 
     if n >= -2**31 and n < 0:
         result = reverse(abs(n)) * -1
-    elif (n < (2**32)-1) and n > 0:
+    elif (n <= (2**32)-1) and n > 0:
         result = reverse(n)
 
     return result
