@@ -23,11 +23,25 @@
 # reverse integer
 
 def solution(n):
-    reversed_number = 0
 
-    while n > 0:
-        reversed_number *= 10
-        reversed_number += n % 10
-        n = n//10
+    def reverse(num):
+        reversed_number = 0
 
-    return reversed_number
+        while num > 0:
+            reversed_number *= 10
+            reversed_number += num % 10
+            num = num // 10
+
+        return reversed_number
+
+    result = 0
+
+    if n < 0:
+        result = reverse(abs(n)) * -1
+    elif n > 0:
+        result = reverse(n)
+
+    return result
+
+
+print(solution(2))
