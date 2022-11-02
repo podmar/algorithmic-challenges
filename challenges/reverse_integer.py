@@ -46,6 +46,3 @@ def solution(n):
             result = 0
 
     return result
-
-
-print(solution(2))
