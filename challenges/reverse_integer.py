@@ -40,7 +40,7 @@ def solution(n):
         result = reverse(abs(n)) * -1
         if result <= -2**31:
             result = 0
-    elif (n <= (2**32)-1) and n > 0:
+    elif (n <= (2**31)-1) and n > 0:
         result = reverse(n)
         if result >= (2**31)-1:
             result = 0
