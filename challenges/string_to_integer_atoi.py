@@ -65,14 +65,15 @@
 def solution(s): 
     input_string = s.lstrip(" ")
     sign = 1
+    output_integer = 0
 
-    if input_string[0] == "-":
+    if len(input_string) == 0:
+        return output_integer
+    elif input_string[0] == "-":
         sign = -1
         input_string = input_string[1:]
     elif input_string[0] == "+":
         input_string = input_string[1:]
-
-    output_integer = 0
 
     min_value = -2**31
     max_value = 2**31 - 1
@@ -83,7 +84,7 @@ def solution(s):
             output_integer = output_integer * 10 + int(char)
             if sign > 0 and output_integer >= max_value:
                 return max_value
-            elif sign < 0 and output_integer <= min_value:
+            elif sign < 0 and -1*output_integer <= min_value:
                 return min_value
         else: 
             break
