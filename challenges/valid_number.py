@@ -17,3 +17,30 @@
 
 # Given a string s, return true if s is a valid number.
 
+def solution(s): 
+
+    def is_digit(char):
+        if 47 <= ord(char) <= 58:
+            return True
+
+    def is_integer(input):
+        result = True
+
+        if input[0] == "+" or input[0] == "-": 
+            input = input[1:]
+
+        for char in input:
+            if is_digit(char): 
+                continue
+            else:
+                result = False
+        
+        return result
+
+    # is_decimal_number
+    # is_e_with_integer
+
+    is_valid_number = is_integer(s)
+
+    return is_valid_number
+
