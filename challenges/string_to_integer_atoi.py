@@ -66,25 +66,26 @@ def solution(s):
     input_string = s.lstrip(" ")
     sign = 1
 
-    output_integer = 0
-
     if input_string[0] == "-":
         sign = -1
         input_string = input_string[1:]
     elif input_string[0] == "+":
         input_string = input_string[1:]
 
-    for char in input_string:
-        # try: 
-        #     number = int(char)
-        #     output_integer = output_integer * 10 + number
-        # except ValueError():
-        #     break
+    output_integer = 0
 
+    min_value = -2**31
+    max_value = 2**31 - 1
+
+    for char in input_string:
 
         if 48 <= ord(char) <= 57: 
             output_integer = output_integer * 10 + int(char)
+            if sign > 0 and output_integer >= max_value:
+                return max_value
+            elif sign < 0 and output_integer <= min_value:
+                return min_value
         else: 
             break
 
-    return (output_integer*sign)
+    return output_integer*sign
