@@ -29,5 +29,6 @@ class TestValidNumber(unittest.TestCase):
 
         self.assertTrue(solution("4."))
 
+
 if __name__ == "__main__":
     unittest.main()
