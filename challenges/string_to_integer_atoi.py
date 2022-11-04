@@ -60,9 +60,9 @@
 
 # 0 <= s.length <= 200
 # s consists of English letters(lower-case and upper-case), digits(0-9), ' ', '+', '-', and '.'.
- 
 
-def solution(s): 
+
+def solution(s):
     input_string = s.lstrip(" ")
     sign = 1
     output_integer = 0
@@ -80,13 +80,13 @@ def solution(s):
 
     for char in input_string:
 
-        if 48 <= ord(char) <= 57: 
+        if 48 <= ord(char) <= 57:
             output_integer = output_integer * 10 + int(char)
             if sign > 0 and output_integer >= max_value:
                 return max_value
             elif sign < 0 and -1*output_integer <= min_value:
                 return min_value
-        else: 
+        else:
             break
 
     return output_integer*sign
