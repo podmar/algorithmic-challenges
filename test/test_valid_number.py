@@ -35,7 +35,7 @@ class TestValidNumber(unittest.TestCase):
         """
 
         self.assertTrue(solution("2e10"))
-        # self.assertTrue(solution("-90E3"))
+        self.assertTrue(solution("-90E3"))
         self.assertTrue(solution("53.5e93"))
         self.assertTrue(solution("-123.456e789"))
         # self.assertTrue(solution("+6e-1"))

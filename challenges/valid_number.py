@@ -107,7 +107,7 @@ def solution(input):
     elif len(input) == 1 and 47 <= ord(input[0]) <= 58:
         return True
 
-    input.lower()
+    # input.lower()
 
     # allowed are: ".", digits 0-9, "e"
     #allowed_signs = [*range(46, 59), 101]
@@ -123,7 +123,7 @@ def solution(input):
             character_dictionary["digits"].append(i)
         elif char == ".":
             character_dictionary["dot"].append(i)
-        elif char == "e":
+        elif char == "e" or char == "E":
             character_dictionary["e"].append(i)
         else:
             return False
