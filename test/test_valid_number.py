@@ -44,6 +44,7 @@ class TestValidNumber(unittest.TestCase):
     def test_invalid_numbers(self):
         """ Tests if the solution works for invalid corner cases
         """
+        self.assertFalse(solution("4e+"))
         self.assertFalse(solution(".e1"))
         self.assertFalse(solution("1a"))
         self.assertFalse(solution("."))
