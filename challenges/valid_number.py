@@ -133,13 +133,16 @@ def solution(input):
         return True
     elif len(character_dictionary["dot"]) > 1 or len(character_dictionary["e"]) > 1 or len(character_dictionary["+/-"]) > 1:
         return False
-    elif len(character_dictionary["e"]) == 1 and character_dictionary["e"][0] == 0:
-        return False
-    elif len(character_dictionary["e"]) == 1 and character_dictionary["e"][0] == len(input) - 1:
-        return False
     elif len(character_dictionary["+/-"]) == 1 and len(character_dictionary["e"]) != 1:
         return False
-    elif len(character_dictionary["+/-"]) == 1 and len(character_dictionary["e"]) == 1 and character_dictionary["+/-"][0] != character_dictionary["e"][0] + 1:
-        return False
+    elif len(character_dictionary["e"]) == 1:
+        if character_dictionary["e"][0] == 0 or character_dictionary["e"][0] == len(input) - 1:
+            return False
+        elif len(character_dictionary["+/-"]) == 1 and character_dictionary["+/-"][0] != character_dictionary["e"][0] + 1:
+            return False
+        elif len(character_dictionary["dot"]) == 1 and character_dictionary["dot"][0] > character_dictionary["e"][0]:
+            return False
+        else:
+            return True
     else:
         return True
