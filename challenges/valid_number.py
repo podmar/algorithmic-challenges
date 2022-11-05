@@ -141,6 +141,8 @@ def solution(input):
             return False
         elif len(character_dictionary["dot"]) == 1 and character_dictionary["dot"][0] > character_dictionary["e"][0]:
             return False
+        elif len(character_dictionary["dot"]) == 1 and character_dictionary["dot"][0] == 0 and character_dictionary["e"][0] == 1:
+            return False
         else:
             return True
     else:
