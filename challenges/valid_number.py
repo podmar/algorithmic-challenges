@@ -106,9 +106,8 @@ def solution(input):
         return False
     elif len(input) == 1 and 47 <= ord(input[0]) <= 58:
         return True
-
-    # allowed are: ".", digits 0-9, "e"
-    #allowed_signs = [*range(46, 59), 101]
+    elif len(input) == 1:
+        return False
 
     character_dictionary = {
         "digits": [],

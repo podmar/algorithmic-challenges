@@ -45,6 +45,7 @@ class TestValidNumber(unittest.TestCase):
         """ Tests if the solution works for invalid corner cases
         """
         self.assertFalse(solution("1a"))
+        self.assertFalse(solution("."))
         self.assertFalse(solution("--6"))
         self.assertFalse(solution("-+3"))
         self.assertFalse(solution("95a54e53"))
