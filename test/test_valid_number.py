@@ -21,8 +21,6 @@ class TestValidNumber(unittest.TestCase):
         self.assertFalse(solution("abc"))
         self.assertFalse(solution("/('#122"))
 
-# For example, all the following are valid numbers: ["", "", "", "2e10", "-90E3", "3e+7", "+6e-1", "53.5e93", "-123.456e789"], while the following are not valid numbers: ["abc", "1a", "1e", "e3", "99e2.5", "--6", "-+3", "95a54e53"].
-
     def test_decimal_number(self):
         """ Tests if the solution works for decimal numbers
         """
@@ -31,6 +29,28 @@ class TestValidNumber(unittest.TestCase):
         self.assertTrue(solution("-0.1"))
         self.assertTrue(solution("+3.14"))
         self.assertTrue(solution("-.9"))
+
+    def test_scientific_notation(self):
+        """ Tests if the solution works for scientific notation
+        """
+
+        self.assertTrue(solution("2e10"))
+        # self.assertTrue(solution("-90E3"))
+        self.assertTrue(solution("53.5e93"))
+        self.assertTrue(solution("-123.456e789"))
+        # self.assertTrue(solution("+6e-1"))
+        # self.assertTrue(solution("3e+7"))
+
+    def test_invalid_numbers(self):
+        """ Tests if the solution works for invalid corner cases
+        """
+        self.assertFalse(solution("1a"))
+        self.assertFalse(solution("--6"))
+        self.assertFalse(solution("-+3"))
+        self.assertFalse(solution("95a54e53"))
+        # self.assertFalse(solution("1e"))
+        # self.assertFalse(solution("e3"))
+        # self.assertFalse(solution("99e2.5"))
 
 
 if __name__ == "__main__":
