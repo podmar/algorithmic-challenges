@@ -96,3 +96,41 @@ def solution_draft(s):
 # if len(not_allowed) != 0, return false
 # if len . / e > 1, return false
 # positioning of the dot vs e conditions
+
+
+def solution(input):
+    if input[0] == "+" or input[0] == "-":
+        input = input[1:]
+
+    if len(input) == 0:
+        return False
+    elif len(input) == 1 and 47 <= ord(input[0]) <= 58:
+        return True
+
+    input.lower()
+
+    # allowed are: ".", digits 0-9, "e"
+    #allowed_signs = [*range(46, 59), 101]
+
+    character_dictionary = {
+        "digits": [],
+        "dot": [],
+        "e": [],
+    }
+
+    for i, char in enumerate(input):
+        if ord(char) in range(47, 59):
+            character_dictionary["digits"].append(i)
+        elif char == ".":
+            character_dictionary["dot"].append(i)
+        elif char == "e":
+            character_dictionary["e"].append(i)
+        else:
+            return False
+
+    if len(character_dictionary["digits"]) == len(input):
+        return True
+    elif len(character_dictionary["dot"]) > 1 or len(character_dictionary["e"]) > 1:
+        return False
+    else:
+        return True
