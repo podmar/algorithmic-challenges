@@ -38,8 +38,8 @@ class TestValidNumber(unittest.TestCase):
         self.assertTrue(solution("-90E3"))
         self.assertTrue(solution("53.5e93"))
         self.assertTrue(solution("-123.456e789"))
-        # self.assertTrue(solution("+6e-1"))
-        # self.assertTrue(solution("3e+7"))
+        self.assertTrue(solution("+6e-1"))
+        self.assertTrue(solution("3e+7"))
 
     def test_invalid_numbers(self):
         """ Tests if the solution works for invalid corner cases
@@ -48,8 +48,8 @@ class TestValidNumber(unittest.TestCase):
         self.assertFalse(solution("--6"))
         self.assertFalse(solution("-+3"))
         self.assertFalse(solution("95a54e53"))
-        # self.assertFalse(solution("1e"))
-        # self.assertFalse(solution("e3"))
+        self.assertFalse(solution("1e"))
+        self.assertFalse(solution("e3"))
         # self.assertFalse(solution("99e2.5"))
 
 

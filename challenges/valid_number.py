@@ -107,8 +107,6 @@ def solution(input):
     elif len(input) == 1 and 47 <= ord(input[0]) <= 58:
         return True
 
-    # input.lower()
-
     # allowed are: ".", digits 0-9, "e"
     #allowed_signs = [*range(46, 59), 101]
 
@@ -116,6 +114,7 @@ def solution(input):
         "digits": [],
         "dot": [],
         "e": [],
+        "+/-": []
     }
 
     for i, char in enumerate(input):
@@ -125,12 +124,22 @@ def solution(input):
             character_dictionary["dot"].append(i)
         elif char == "e" or char == "E":
             character_dictionary["e"].append(i)
+        elif char == "+" or char == "-":
+            character_dictionary["+/-"].append(i)
         else:
             return False
 
     if len(character_dictionary["digits"]) == len(input):
         return True
-    elif len(character_dictionary["dot"]) > 1 or len(character_dictionary["e"]) > 1:
+    elif len(character_dictionary["dot"]) > 1 or len(character_dictionary["e"]) > 1 or len(character_dictionary["+/-"]) > 1:
+        return False
+    elif len(character_dictionary["e"]) == 1 and character_dictionary["e"][0] == 0:
+        return False
+    elif len(character_dictionary["e"]) == 1 and character_dictionary["e"][0] == len(input) - 1:
+        return False
+    elif len(character_dictionary["+/-"]) == 1 and len(character_dictionary["e"]) != 1:
+        return False
+    elif len(character_dictionary["+/-"]) == 1 and len(character_dictionary["e"]) == 1 and character_dictionary["+/-"][0] != character_dictionary["e"][0] + 1:
         return False
     else:
         return True
