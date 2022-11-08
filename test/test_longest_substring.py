@@ -10,6 +10,14 @@ class TestLongestSubstring(unittest.TestCase):
 
         self.assertTrue(type(solution("abc")) == int)
 
+    def test_string_lenght(self):
+        """Testing if the output is an integer.
+        """
+
+        self.assertEqual(solution("abc"), 3)
+        self.assertEqual(solution("abacaba"), 2)
+        self.assertEqual(solution("abcde"), 5)
+
 
 if __name__ == "__main__":
     unittest.main()
