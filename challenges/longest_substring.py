@@ -21,4 +21,37 @@
 # s consists of only English lowercase letters.
 
 def solution(s):
-    return
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+                'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+    longest_substring = 0
+    current_substring = 0
+    last_index = alphabet.index(s[0]) - 1
+
+    for char in s:
+
+        if alphabet.index(char) == last_index + 1:
+            current_substring += 1
+            last_index += 1
+            if current_substring > longest_substring:
+                longest_substring = current_substring
+
+        else:
+            last_index = alphabet.index(char)
+            if current_substring > longest_substring:
+                longest_substring = current_substring
+            current_substring = 1
+
+    return longest_substring
+
+    sol1 = solution('abcd')
+    print(sol1)
+
+    print(solution('abcd'))
+
+    # print(f"longest substring of abcd is {solution('abcd')}")
+    # print(f"longest substring of abcddbab is {solution('abcddbab')}")
+    # print(f"longest substring of abmlcddbab is {solution('abcddbab')}")
+
+    # if __name__ == "__main__":
+    #     print(sol1)
