@@ -43,15 +43,3 @@ def solution(s):
             current_substring = 1
 
     return longest_substring
-
-    sol1 = solution('abcd')
-    print(sol1)
-
-    print(solution('abcd'))
-
-    # print(f"longest substring of abcd is {solution('abcd')}")
-    # print(f"longest substring of abcddbab is {solution('abcddbab')}")
-    # print(f"longest substring of abmlcddbab is {solution('abcddbab')}")
-
-    # if __name__ == "__main__":
-    #     print(sol1)
