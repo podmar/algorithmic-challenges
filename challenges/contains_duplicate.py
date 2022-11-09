@@ -21,4 +21,5 @@
 # -109 <= nums[i] <= 109
 
 def solution(nums):
-    return
+    result = False
+    return result
