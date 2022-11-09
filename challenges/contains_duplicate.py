@@ -21,5 +21,10 @@
 # -109 <= nums[i] <= 109
 
 def solution(nums):
-    result = False
-    return result
+
+    set_nums = set(nums)
+
+    if len(set_nums) == len(nums):
+        return False
+    else:
+        return True
