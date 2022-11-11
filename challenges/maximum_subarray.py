@@ -22,7 +22,7 @@
 # Constraints:
 
 # 1 <= nums.length <= 105
-# -104 <= nums[i] <= 104
+# -104 <= nums[num] <= 104
 
 
 # Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
@@ -35,9 +35,9 @@ def solution(nums: list[int]) -> int:
     max_subarray = nums[0]
     current_sum = nums[0]
 
-    for i in range(1, len(nums)):
+    for num in nums[1:]:
 
-        current_sum = max(current_sum + nums[i], nums[i])
+        current_sum = max(current_sum + num, num)
         max_subarray = max(current_sum, max_subarray)
 
     return max_subarray
