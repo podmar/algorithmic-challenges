@@ -32,7 +32,8 @@ def solution(nums: list) -> int:
     Using sliding window
     """
 
-    max_subarray, current_sum = nums[0]
+    max_subarray = nums[0]
+    current_sum = nums[0]
 
     for i in range(1, len(nums)):
 
