@@ -43,25 +43,4 @@ def solution(nums: list) -> int:
 
         max_subarray = max(current_sum, max_subarray)
 
-    return
-
-
-def max_sum(nums):
-    n = len(nums) - 1
-
-    if n == 0:
-        return nums[n]
-    else:
-        return max(max_sum(nums[:n-1]), max_sum(nums[:n-1]) + nums[n])
-
-
-def recursive_sum(arr: list) -> int:
-    i = len(arr) - 1
-
-    if i == 0:
-        return arr[i]
-    else:
-        return (recursive_sum(arr[:i-1]) + arr[i])
-
-
-print(recursive_sum([1, 2]))
+    return max_subarray
