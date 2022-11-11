@@ -45,4 +45,13 @@ def max_sum(nums):
         return max(max_sum(nums[:n-1]), max_sum(nums[:n-1]) + nums[n])
 
 
-print(max_sum([1, 2, 3, 4]))
+def recursive_sum(arr: list) -> int:
+    i = len(arr) - 1
+
+    if i == 0:
+        return arr[i]
+    else:
+        return (recursive_sum(arr[:i-1]) + arr[i])
+
+
+print(recursive_sum([1, 2, 3, 4]))
