@@ -34,3 +34,15 @@ def solution(nums):
         max_subarray = max(current_value + nums[i], max_subarray)
 
     return
+
+
+def max_sum(nums):
+    n = len(nums) - 1
+
+    if n == 0:
+        return nums[n]
+    else:
+        return max(max_sum(nums[:n-1]), max_sum(nums[:n-1]) + nums[n])
+
+
+print(max_sum([1, 2, 3, 4]))
