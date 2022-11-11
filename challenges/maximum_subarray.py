@@ -27,11 +27,21 @@
 
 # Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
-def solution(nums):
-    max_subarray, left_border, current_value = nums[0]
+def solution(nums: list) -> int:
+    """
+    Using sliding window
+    """
+
+    max_subarray, current_sum = nums[0]
 
     for i in range(1, len(nums)):
-        max_subarray = max(current_value + nums[i], max_subarray)
+
+        if current_sum + nums[i] < nums[i]:
+            current_sum = nums[i]
+        else:
+            current_sum += nums[i]
+
+        max_subarray = max(current_sum, max_subarray)
 
     return
 
@@ -54,4 +64,4 @@ def recursive_sum(arr: list) -> int:
         return (recursive_sum(arr[:i-1]) + arr[i])
 
 
-print(recursive_sum([1, 2, 3, 4]))
+print(recursive_sum([1, 2]))
