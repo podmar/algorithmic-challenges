@@ -27,9 +27,9 @@
 
 # Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
-def solution(nums: list) -> int:
+def solution(nums: list[int]) -> int:
     """
-    Using sliding window
+    Using Kadane's algorithm
     """
 
     max_subarray = nums[0]
@@ -37,11 +37,7 @@ def solution(nums: list) -> int:
 
     for i in range(1, len(nums)):
 
-        if current_sum + nums[i] < nums[i]:
-            current_sum = nums[i]
-        else:
-            current_sum += nums[i]
-
+        current_sum = max(current_sum + nums[i], nums[i])
         max_subarray = max(current_sum, max_subarray)
 
     return max_subarray
