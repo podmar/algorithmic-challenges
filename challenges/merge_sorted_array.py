@@ -36,5 +36,11 @@
 # 1 <= m + n <= 200
 # -109 <= nums1[i], nums2[j] <= 109
 
-def solution():
+def solution(nums1: list[int], m: int, nums2: list[int], n: int):
+    # include print statements for testing
+    print(mums1)
     return
+
+
+if __name__ == "__main__":
+    solution([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
