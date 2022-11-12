@@ -9,12 +9,14 @@ def solution(array: list[int]) -> int:
     if len(array) < 3:
         return rain_volume
 
-    for index in range(len(array) - 1):
-        # max_left = array[index]
-        for left_index in range(index - 1):
-            max_left = max(array[left_index], array[index])
-        for right_index in range(index - 1):
-            max_right = max(array[index], array[right_index])
+    for index in range(1, len(array) - 1):
+        max_left = array[0]
+        for left_index in range(index):
+            max_left = max(array[left_index], max_left)
 
-        rain_volume = + max(max_left, max_right) - array[index]
+        max_right = array[-1]
+        for right_index in range(index + 1, len(array) - 1):
+            max_right = max(array[right_index], max_right)
+
+        rain_volume += min(max_left, max_right) - array[index]
     return rain_volume
