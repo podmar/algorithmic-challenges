@@ -19,6 +19,13 @@ class TestRainWater(unittest.TestCase):
         self.assertEqual(solution([4, 1, 3, 1, 0]), 2)
         self.assertEqual(solution([4, 0, 0, 0, 5]), 12)
 
+    def test_output_small_arrays(self):
+        """ Tests is output correct when given only positive numbers
+        """
+
+        self.assertEqual(solution([4, 1]), 0)
+        self.assertEqual(solution([5]), 0)
+
 
 if __name__ == "__main__":
     unittest.main()
