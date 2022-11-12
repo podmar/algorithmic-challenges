@@ -8,7 +8,7 @@ class TestRainWater(unittest.TestCase):
         """Tests is the output is a number
         """
 
-        self.assertTrue(type(solution([4, 1, 3, 1, 5])) == number)
+        self.assertTrue(type(solution([4, 1, 3, 1, 5])) == int)
 
     def test_output_value_positive_num(self):
         """ Tests is output correct when given only positive numbers
