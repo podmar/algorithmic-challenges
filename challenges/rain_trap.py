@@ -1,10 +1,13 @@
 # Given n non-negative integers representing an elevation map where the width of each bar is 1. Compute how much water it can trap after raining!
 
-def solution(array):
+def solution(array: list[int]) -> int:
 
     # define the max on the left for each element in the list
 
     rain_volume = 0
+
+    if len(array) < 3:
+        return rain_volume
 
     for index in range(len(array) - 1):
         # max_left = array[index]
