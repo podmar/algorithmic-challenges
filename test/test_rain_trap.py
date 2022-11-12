@@ -19,12 +19,6 @@ class TestRainWater(unittest.TestCase):
         self.assertEqual(solution([4, 1, 3, 1, 0]), 2)
         self.assertEqual(solution([4, 0, 0, 0, 5]), 12)
 
-    def test_output_value_negative_num(self):
-        """ Tests is output correct when negative numbers given
-        """
-
-        self.assertEqual(solution([2, -1, -3, 1, 5]), 10)
-
 
 if __name__ == "__main__":
     unittest.main()
