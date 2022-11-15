@@ -38,7 +38,7 @@
 
 def merge(nums1: list[int], m: int, nums2: list[int], n: int):
     # include print statements for testing
-    print(mums1)
+    print(nums1)
     return
 
 
