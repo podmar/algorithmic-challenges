@@ -39,8 +39,7 @@
 def merge(nums1: list[int], m: int, nums2: list[int], n: int):
 
     if m == 0:
-        for i, num in enumerate(nums2):
-            nums1[i] = num
+        nums1[:] = nums2[:n]
     else:
         while m > 0 and n > 0:
             if nums1[m-1] < nums2[n-1]:
