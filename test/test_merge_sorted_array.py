@@ -1,6 +1,6 @@
 import unittest
 
-from challenges.merge_sorted_array import solution
+from challenges.merge_sorted_array import merge
 
 
 class TestMergeSortedArray(unittest.TestCase):
@@ -8,7 +8,7 @@ class TestMergeSortedArray(unittest.TestCase):
         """Tests is the output is None
         """
 
-        self.assertTrue(type(solution([4, 1, 3, 1, 5])) == None)
+        self.assertIsNone(merge())
 
     def test_(self):
         """ 
