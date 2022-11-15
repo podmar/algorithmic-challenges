@@ -36,11 +36,17 @@
 # 1 <= m + n <= 200
 # -109 <= nums1[i], nums2[j] <= 109
 
-def solution(nums1: list[int], m: int, nums2: list[int], n: int):
+def merge(nums1: list[int], m: int, nums2: list[int], n: int):
     # include print statements for testing
     print(mums1)
     return
 
 
 if __name__ == "__main__":
-    solution([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
+
+    nums1 = [1, 2, 3, 0, 0, 0]
+    m = 3
+    nums2 = [2, 5, 6]
+    n = 3
+    merge(num1, m, nums2, n)
+    print(nums1)  # Output: [1, 2, 2, 3, 5, 6]
