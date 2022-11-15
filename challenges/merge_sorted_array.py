@@ -38,7 +38,40 @@
 
 def merge(nums1: list[int], m: int, nums2: list[int], n: int):
     # include print statements for testing
-    print(nums1)
+    # print(nums1)
+
+    nums1 = [1, 2, 3, 0, 0, 0]
+    m = 3
+    nums2 = [2, 5, 6]
+    n = 3
+
+    result = [0 for el in nums1]
+
+    i = 0  # nums1, m
+    j = 0  # nums2, n
+    k = 0  # result list
+
+    while i < m and j < n:
+        if nums1[i] < nums2[j]:
+            result[k] = nums1[i]
+            i += 1
+        else:
+            result[k] = nums2[j]
+            j += 1
+        k += 1
+
+    while i < m:
+        result[k] = nums1[i]
+        i += 1
+        k += 1
+
+    while j < n:
+        result[k] = nums2[j]
+        j += 1
+        k += 1
+
+    print(f"i={i}, j={j}, k={k}, result={result}")
+
     return
 
 
@@ -48,5 +81,5 @@ if __name__ == "__main__":
     m = 3
     nums2 = [2, 5, 6]
     n = 3
-    merge(num1, m, nums2, n)
-    print(nums1)  # Output: [1, 2, 2, 3, 5, 6]
+    merge(nums1, m, nums2, n)
+    # print(nums1)  # Output: [1, 2, 2, 3, 5, 6]
