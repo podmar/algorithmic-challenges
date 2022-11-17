@@ -12,6 +12,16 @@ class TwoStackQueue:
         else:
             return False
 
+    def enqueue(self, new_item):
+        if len(self.dequeue_stack) != 0:
+            while len(self.dequeue_stack) > 0:
+                item = self.dequeue_stack.pop()
+                self.equeue_stack.append(item)
+        self.equeue_stack.append(new_item)
+
+    def dequeue(self):
+        return
+
 
 class RecursiveQueue:
     def __init__(self):
