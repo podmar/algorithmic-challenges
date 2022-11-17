@@ -8,11 +8,11 @@ class TestTwoStackQueue(unittest.TestCase):
         self.queue = TwoStackQueue()
         self.queue.enqueue(14)
 
-    def test_pop_output(self):
-        """Tests is the output of pop function is correct
+    def test_dequeue_output(self):
+        """Tests is the output of dequeue function is correct
         """
 
-        self.assertIsInstance(self.queue.pop(), 14)
+        self.assertEqual(self.queue.dequeue(), 14)
 
 
 if __name__ == "__main__":
