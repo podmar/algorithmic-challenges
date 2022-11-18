@@ -67,11 +67,6 @@ class TestRecursiveQueue(unittest.TestCase):
         self.assertEqual(self.recursive_queue.dequeue(), 0)
         self.assertEqual(self.recursive_queue.dequeue(), 3)
 
-        # with self.assertRaises(Exception) as assert_error:
-        #     self.recursive_queue.dequeue()
-        # self.assertEqual(
-        #     assert_error.exception.args[0], "The queue is empty, cannot dequeue.")
-
 
 if __name__ == "__main__":
     unittest.main()

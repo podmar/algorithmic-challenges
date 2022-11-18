@@ -52,16 +52,15 @@ class RecursiveQueue:
     def dequeue(self):
 
         if self.get_length() == 1:
-            dequeued_item = self.queue.pop()
-            return dequeued_item
+            return self.queue.pop()
 
         elif self.get_length() > 1:
             item = self.queue.pop()
-            dequeing = self.dequeue()
+            dequeued_item = self.dequeue()
 
         self.queue.append(item)
 
-        return dequeing
+        return dequeued_item
 
     def get_length(self):
         return len(self.queue)
