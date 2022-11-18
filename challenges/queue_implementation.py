@@ -54,6 +54,9 @@ class RecursiveQueue:
         if self.get_length() == 1:
             return self.queue.pop()
 
+        elif self.is_empty():
+            raise Exception("The queue is empty, cannot dequeue.")
+
         elif self.get_length() > 1:
             item = self.queue.pop()
             dequeued_item = self.dequeue()
