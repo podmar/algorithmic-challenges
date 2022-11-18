@@ -45,3 +45,9 @@ class RecursiveQueue:
             return True
         else:
             return False
+
+    def enqueue(self, new_item):
+        self.queue.append(new_item)
+
+    def get_length(self):
+        return len(self.queue)
