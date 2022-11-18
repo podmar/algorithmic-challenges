@@ -51,22 +51,15 @@ class RecursiveQueue:
 
     def dequeue(self):
 
-        print(
-            f"for queue lenght {self.get_length()} the queue is: {self.queue}:")
-
         if self.get_length() == 1:
             dequeued_item = self.queue.pop()
-            print(f"The item to dequeue: {dequeued_item}")
             return dequeued_item
+
         elif self.get_length() > 1:
             item = self.queue.pop()
-            print(f"popped item {item}")
-            print(f"the queue is: {self.queue}, dequeing further.")
-
             dequeing = self.dequeue()
 
         self.queue.append(item)
-        print(f"appending item: {item}, the queue is: {self.queue}:")
 
         return dequeing
 
