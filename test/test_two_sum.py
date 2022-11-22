@@ -16,7 +16,7 @@ class TestTwoSum(unittest.TestCase):
         """Additional corner cases
         """
         self.assertEqual(solution([15, 7, 11, 2], 9), [1, 3])
-        self.assertEqual(solution([3, 2, 0, 5, 4], 6), [1, 2])
+        self.assertEqual(solution([3, 2, 0, 5, 4], 6), [1, 4])
         self.assertEqual(solution([3, 5, 6, 7, 3], 6), [0, 4])
 
 
