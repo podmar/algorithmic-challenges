@@ -30,3 +30,7 @@
 def solution(nums: list[int], target: int) -> list[int]:
     """
     """
+# counting a sum of two consecutive elements
+    for i in range(len(nums)-1):
+        if nums[i] + nums[i + 1] == target:
+            return [i, i+1]
