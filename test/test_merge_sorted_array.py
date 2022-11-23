@@ -93,5 +93,19 @@ class TestMergeBothArraysLen1(unittest.TestCase):
         self.assertEqual(self.nums1, [1, 2])
 
 
+class TestMergeNums1Larger(unittest.TestCase):
+    def setUp(self):
+        self.nums1 = [4, 5, 6, 0, 0, 0]
+        self.m = 3
+        self.nums2 = [1, 2, 3]
+        self.n = 3
+
+    def test_nums1_larger(self):
+        """ Testing nums1 arrray contains integers larger than nums2
+        """
+        merge(self.nums1, self.m, self.nums2, self.n)
+        self.assertEqual(self.nums1, [1, 2, 3, 4, 5, 6])
+
+
 if __name__ == "__main__":
     unittest.main()
