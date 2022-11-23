@@ -36,7 +36,16 @@ def solution(nums: list[int], target: int) -> list[int]:
     #         return [i, i+1]
 
 # solution with 2 loops - o(n2)
+    # for i in range(len(nums)):
+    #     for j in range(i+1, len(nums)):
+    #         if nums[i] + nums[j] == target:
+    #             return [i, j]
+
+# wish a hash table and one loop - o(n)
+    hash_table = {}
     for i in range(len(nums)):
-        for j in range(i+1, len(nums)):
-            if nums[i] + nums[j] == target:
-                return [i, j]
+        if nums[i] in hash_table:
+            return [hash_table[nums[i]], i]
+        else:
+            required_value = target - nums[i]
+            hash_table[required_value] = i
