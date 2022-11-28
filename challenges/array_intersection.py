@@ -22,4 +22,17 @@ def solution(nums1: list[int], nums2: list[int]) -> list[int]:
     """
     intersection_list = []
 
+    hash_map = {}
+
+    for num in nums1:
+        if num in hash_map:
+            hash_map[num] += 1
+        else:
+            hash_map[num] = 1
+
+    for num in nums2:
+        if num in hash_map and hash_map[num] > 0:
+            intersection_list.append(num)
+            hash_map[num] -= 1
+
     return intersection_list
